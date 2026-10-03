@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Three Plus One Slide</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #222;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #1a3b5c;
+            overflow: hidden;
+        }
+        .presentation-container {
+            position: relative;
+            width: 960px;
+            height: 720px;
+            background-color: #d1f4fa;
+            border: 4px solid #3d4a7c;
+            box-sizing: border-box;
+            padding: 30px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .build {
+            opacity: 0;
+            transform: translateY(15px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        .build.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #3d4a7c;
+            padding-bottom: 10px;
+        }
+        .header h1 {
+            color: #4a5c88;
+            font-size: 2.8em;
+            margin: 0 0 10px 0;
+        }
+        .header h2 {
+            color: #008080;
+            font-size: 1.2em;
+            margin: 0;
+        }
+        .top-stat {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .stat-badge {
+            background-color: #4f5b93;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-right: 20px;
+            text-align: center;
+            line-height: 1.2;
+        }
+        .stat-text {
+            font-size: 1.3em;
+            color: #2c4c7c;
+            font-weight: bold;
+            max-width: 400px;
+        }
+        .risk-factors {
+            text-align: center;
+            background-color: #b2ebf2;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: #006064;
+        }
+        .risk-boxes {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 10px;
+        }
+        .risk-box {
+            padding: 10px 30px;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+        }
+        .heart { background-color: #4f5b93; }
+        .stroke { background-color: #aed581; color: #33691e; }
+        
+        .bottom-section-title {
+            text-align: center;
+            font-weight: bold;
+            color: #00695c;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .grid-item {
+            display: flex;
+            align-items: center;
+            background-color: #b3e5fc;
+            border-radius: 10px;
+            padding: 10px;
+        }
+        .circle {
+            background-color: #e0f7fa;
+            border: 3px solid #ffb300;
+            color: #006064;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        .ncd-list {
+            background-color: #4f5b93;
+            color: white;
+            padding: 15px 10px;
+            border-radius: 8px;
+            flex-grow: 1;
+            font-size: 1em;
+            text-align: center;
+            line-height: 1.4;
+        }
+        .footer {
+            font-size: 0.8em;
+            text-align: center;
+            color: #555;
+            width: 100%;
+            border-top: 1px solid #ccc;
+            padding-top: 10px;
+        }
+        .instructions {
+            position: absolute;
+            top: 20px;
+            color: #fff;
+            font-size: 14px;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <div class="instructions">Click anywhere or press Space/Right Arrow to advance builds.</div>
+    <div class="presentation-container" id="slide">
+        
+        <!-- Build 1: Header -->
+        <div class="header build">
+            <h1>The three plus one[span_0](start_span)[span_0](end_span)</h1>
+            <h2>Diabetes, hypertension, high cholesterol PLUS obesity[span_1](start_span)[span_1](end_span)</h2>
+        </div>
+
+        <!-- Build 2: Top Stat -->
+        <div class="top-stat build">
+            <div class="stat-badge">Over half<br>a million[span_2](start_span)[span_2](end_span)</div>
+            <div class="stat-text">or 2.5% of adults in Malaysia live with four non-communicable diseases (NCDs)[span_3](start_span)[span_3](end_span)</div>
+        </div>
+
+        <!-- Build 3: Risk Factors -->
+        <div class="risk-factors build">
+            They are major risk factors for:[span_4](start_span)[span_4](end_span)
+            <div class="risk-boxes">
+                <div class="risk-box heart">🤍 Heart disease[span_5](start_span)[span_5](end_span)</div>
+                <div class="risk-box stroke">🧠 Stroke[span_6](start_span)[span_6](end_span)</div>
+            </div>
+        </div>
+
+        <!-- Build 4: Bottom Stat Intro -->
+        <div class="bottom-section-title build">
+            Almost 2.3 million adults in Malaysia live with three NCDs[span_7](start_span)[span_7](end_span)
+        </div>
+
+        <!-- Build 5-8: Grid Items progressively revealed -->
+        <div class="grid">
+            <div class="grid-item build">
+                <div class="circle">5.1%</div>
+                <div class="ncd-list">Diabetes + Hypertension + High cholesterol[span_8](start_span)[span_8](end_span)</div>
+            </div>
+            <div class="grid-item build">
+                <div class="circle">0.4%</div>
+                <div class="ncd-list">Diabetes + High cholesterol + Obesity[span_9](start_span)[span_9](end_span)</div>
+            </div>
+            <div class="grid-item build">
+                <div class="circle">1.2%</div>
+                <div class="ncd-list">Diabetes + Hypertension + Obesity[span_10](start_span)[span_10](end_span)</div>
+            </div>
+            <div class="grid-item build">
+                <div class="circle">2.9%</div>
+                <div class="ncd-list">Hypertension + High cholesterol + Obesity[span_11](start_span)[span_11](end_span)</div>
+            </div>
+        </div>
+
+        <!-- Build 9: Footer & References -->
+        <div class="footer build">
+            Institute for Public Health 2024. National Health and Morbidity Survey (NHMS) 2023: Non-communicable diseases (NCDs)[span_12](start_span)[span_12](end_span) <br>
+            Reference file: <a href="image.png">image.png</a>
+        </div>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const builds = document.querySelectorAll('.build');
+            let currentBuild = 0;
+
+            function nextBuild() {
+                if (currentBuild < builds.length) {
+                    builds[currentBuild].classList.add('visible');
+                    currentBuild++;
+                }
+            }
+
+            // Click anywhere to advance
+            document.body.addEventListener('click', nextBuild);
+
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (e.code === 'Space' || e.code === 'ArrowRight') {
+                    nextBuild();
+                } else if (e.code === 'ArrowLeft') {
+                    if (currentBuild > 0) {
+                        currentBuild--;
+                        builds[currentBuild].classList.remove('visible');
+                    }
+                }
+            });
+
+            // Show first item automatically
+            setTimeout(nextBuild, 300);
+        });
+    </script>
+</body>
+</html>
